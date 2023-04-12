@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'contacts.dart';
+import 'PorfilePage.dart';
 import 'dashboard.dart';
 import 'events.dart';
 import 'my_drawer_header.dart';
@@ -22,7 +22,7 @@ class principal_screen extends State<HomePage> {
     if (currentPage == DrawerSections.dashboard) {
       container = DashboardPage();
     } else if (currentPage == DrawerSections.contacts) {
-      container = ContactsPage();
+      container = PorfilePage();
     } else if (currentPage == DrawerSections.events) {
       container = EventsPage();
     } else if (currentPage == DrawerSections.notes) {
@@ -33,7 +33,6 @@ class principal_screen extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 100, 20, 124),
-        title: Text("Rapid Tech"),
       ),
       body: container,
       drawer: Drawer(
