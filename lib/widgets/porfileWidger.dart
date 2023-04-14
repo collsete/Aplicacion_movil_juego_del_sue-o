@@ -34,11 +34,11 @@ class PorfileWidget extends StatelessWidget {
       child:Material(
         color:Colors.transparent,
             child: Ink.image(
-            image: image,
-            fit: BoxFit.cover,
-            width: 128,
-            height: 128,
-            child: InkWell(onTap: onClicked),
+              image: image,
+              fit: BoxFit.cover,
+              width: 128,
+              height: 128,
+              child: InkWell(onTap: onClicked),
           )
        )
     );

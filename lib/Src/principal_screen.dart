@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'PorfilePage.dart';
 import 'dashboard.dart';
-import 'events.dart';
+import 'MissionHub.dart';
 import 'my_drawer_header.dart';
 import 'notes.dart';
 import 'notifications.dart';
@@ -21,10 +21,10 @@ class principal_screen extends State<HomePage> {
     var container;
     if (currentPage == DrawerSections.dashboard) {
       container = DashboardPage();
-    } else if (currentPage == DrawerSections.contacts) {
+    } else if (currentPage == DrawerSections.Perfil) {
       container = PorfilePage();
     } else if (currentPage == DrawerSections.events) {
-      container = EventsPage();
+      container = MissionHub();
     } else if (currentPage == DrawerSections.notes) {
       container = NotesPage();
     } else if (currentPage == DrawerSections.notifications) {
@@ -58,10 +58,10 @@ class principal_screen extends State<HomePage> {
       child: Column(
         // shows the list of menu drawer
         children: [
-          menuItem(1, "Dashboard", Icons.dashboard_outlined,
+          menuItem(1, "Inicio", Icons.star,
               currentPage == DrawerSections.dashboard ? true : false),
-          menuItem(2, "Contacts", Icons.people_alt_outlined,
-              currentPage == DrawerSections.contacts ? true : false),
+          menuItem(2, "Perfil", Icons.people_alt_outlined,
+              currentPage == DrawerSections.Perfil ? true : false),
           menuItem(3, "Events", Icons.event,
               currentPage == DrawerSections.events ? true : false),
           menuItem(4, "Notes", Icons.notes,
@@ -87,7 +87,7 @@ class principal_screen extends State<HomePage> {
             if (id == 1) {
               currentPage = DrawerSections.dashboard;
             } else if (id == 2) {
-              currentPage = DrawerSections.contacts;
+              currentPage = DrawerSections.Perfil;
             } else if (id == 3) {
               currentPage = DrawerSections.events;
             } else if (id == 4) {
@@ -131,7 +131,7 @@ class principal_screen extends State<HomePage> {
 
 enum DrawerSections {
   dashboard,
-  contacts,
+  Perfil,
   events,
   notes,
   settings,
