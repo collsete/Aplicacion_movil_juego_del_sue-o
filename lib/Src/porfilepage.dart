@@ -45,7 +45,9 @@ class _PorgilePageState extends State<PorfilePage> {
               title: Text(achievement),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: ()  {
+                Navigator.pushNamed(context, 'consejos');
+              },
               child: Text("Revisar consejos"),
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue)
             )

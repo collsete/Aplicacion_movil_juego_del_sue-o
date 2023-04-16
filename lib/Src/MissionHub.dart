@@ -47,7 +47,7 @@ class _MissionHubState extends State<MissionHub> {
           children: [
             MissionCard(mission: _currentMission),
             SizedBox(height: 16.0),
-            Text('Otras misiones'),
+            Text('Proximas misiones'),
             Expanded(
               child: ListView.builder(
                 itemCount: _missions.length,

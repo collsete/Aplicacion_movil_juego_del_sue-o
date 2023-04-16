@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tesis/Src/consejos.dart';
 import 'package:tesis/Src/login_screen.dart';
 import 'package:tesis/Src/principal_screen.dart';
 import 'package:tesis/Src/register_screen.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         'login':(context) =>  const Loginscreen(),
         'register' : (context) => const RegisterScreen(),
         'main' :(context) =>  HomePage(),
- 
+        'consejos' : (context) =>consejosScreen(),
         },
     );
 
