@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-
+import 'package:tesis/Src/mision.dart';
+import 'package:tesis/Src/mi_planta.dart';
 import 'PorfilePage.dart';
-import 'dashboard.dart';
-import 'MissionHub.dart';
+import 'itemHub.dart';
 import 'my_drawer_header.dart';
 import 'notes.dart';
 import 'notifications.dart';
+import 'dashboard.dart';
 
 
-class HomePage extends StatefulWidget {
+ class HomePage extends StatefulWidget {
   @override
   principal_screen createState() => principal_screen();
 }
@@ -19,17 +20,22 @@ class principal_screen extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var container;
-    if (currentPage == DrawerSections.dashboard) {
-      container = DashboardPage();
+    if (currentPage == DrawerSections.MyHomePage) {
+      container = MyHomePage();
     } else if (currentPage == DrawerSections.Perfil) {
       container = PorfilePage();
     } else if (currentPage == DrawerSections.events) {
-      container = MissionHub();
+      container = ItemsHubScreen();
     } else if (currentPage == DrawerSections.notes) {
       container = NotesPage();
     } else if (currentPage == DrawerSections.notifications) {
       container = NotificationsPage();
+    } else if (currentPage == DrawerSections.settings) {
+      container = settings();
+    } else if (currentPage == DrawerSections.dashboard){
+        container= DashboardView();
     }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 100, 20, 124),
@@ -58,20 +64,19 @@ class principal_screen extends State<HomePage> {
       child: Column(
         // shows the list of menu drawer
         children: [
-          menuItem(1, "Inicio", Icons.star,
-              currentPage == DrawerSections.dashboard ? true : false),
+          menuItem(1, "Inicio", Icons.emoji_nature_outlined,
+              currentPage == DrawerSections.MyHomePage ? true : false),
           menuItem(2, "Perfil", Icons.people_alt_outlined,
               currentPage == DrawerSections.Perfil ? true : false),
-          menuItem(3, "Events", Icons.event,
+          menuItem(3, "Mis arboles", Icons.nature_outlined,
               currentPage == DrawerSections.events ? true : false),
-          menuItem(4, "Notes", Icons.notes,
+          menuItem(4, "Tienda", Icons.shopping_basket_sharp,
               currentPage == DrawerSections.notes ? true : false),
-          Divider(),
-          menuItem(5, "Settings", Icons.settings_outlined,
+          menuItem(5, "Misiones", Icons.star,
               currentPage == DrawerSections.settings ? true : false),
-          menuItem(6, "Notifications", Icons.notifications_outlined,
-              currentPage == DrawerSections.notifications ? true : false),
-          Divider(),
+          // Nuevo ítem de menú para la sección de Dashboard
+          menuItem(6, "Mis estadisticas", Icons.dashboard,
+              currentPage == DrawerSections.dashboard ? true : false),
         ],
       ),
     );
@@ -85,7 +90,7 @@ class principal_screen extends State<HomePage> {
           Navigator.pop(context);
           setState(() {
             if (id == 1) {
-              currentPage = DrawerSections.dashboard;
+              currentPage = DrawerSections.MyHomePage;
             } else if (id == 2) {
               currentPage = DrawerSections.Perfil;
             } else if (id == 3) {
@@ -95,8 +100,9 @@ class principal_screen extends State<HomePage> {
             } else if (id == 5) {
               currentPage = DrawerSections.settings;
             } else if (id == 6) {
-              currentPage = DrawerSections.notifications;
+              currentPage = DrawerSections.dashboard; // Nuevo bloque para Dashboard
             } else if (id == 7) {
+              currentPage = DrawerSections.notifications;
             }
           });
         },
@@ -136,5 +142,5 @@ enum DrawerSections {
   notes,
   settings,
   notifications,
-
+  MyHomePage,
 }

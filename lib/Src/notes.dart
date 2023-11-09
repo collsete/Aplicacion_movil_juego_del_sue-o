@@ -6,9 +6,10 @@ class NotesPage extends StatefulWidget {
 }
 
 class _StoreState extends State<NotesPage> {
-  List<Item> _items = [    Item('Objeto 1', 10.0, Colors.blue),    
-  Item('Objeto 2', 20.0,Color.fromARGB(255, 102, 25, 128)),    
-  Item('Objeto 3', 30.0, Colors.red),  ];
+  List<Item> _items = [
+    Item('Sansevieria', 10.0, Colors.grey[600]!),
+    Item('Margarita', 20.0, Colors.grey[600]!),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +21,34 @@ class _StoreState extends State<NotesPage> {
           return Card(
             color: item.color,
             child: ListTile(
-              title: Text(item.name),
+              title: RichText(
+                text: TextSpan(
+                  text: item.name,
+                  style: TextStyle(
+                    decoration: TextDecoration.lineThrough,
+                    decorationColor: Colors.grey[700],
+                    decorationThickness: 2.0,
+                  ),
+                ),
+              ),
               subtitle: Text('\$${item.price.toStringAsFixed(2)}'),
               trailing: ElevatedButton(
                 onPressed: () {
                   // Lógica de compra aquí
                 },
                 style: ElevatedButton.styleFrom(
-                 backgroundColor: Colors.green,
+                  backgroundColor: Colors.grey[600]!,
                 ),
-                child: Text('Comprar'),
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Comprar',
+                    style: TextStyle(
+                      decoration: TextDecoration.lineThrough,
+                      decorationColor: Colors.grey[600]!,
+                      decorationThickness: 2.0,
+                    ),
+                  ),
+                ),
               ),
             ),
           );

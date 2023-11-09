@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59770678748",
+    "project_id": "tesis-22fae",
+    "storage_bucket": "tesis-22fae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59770678748:android:1877982f0a121d3596b319",
+        "android_client_info": {
+          "package_name": "com.example.tesis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV6jFI-bLg28PfhEm1NoBVCzI2NGzzAUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
